@@ -1,12 +1,13 @@
 import axios from 'axios'
 import { setSubreddits } from '../Subreddits/SubredditsSlice'
+import { setPosts } from '../Reddits/RedditsSlice'
 
 const endpoint = 'https://www.reddit.com'
 const search_endpoint = 'https://www.reddit.com/search.json?q='
 
-export const fetchPosts = async (selectedSubreddits) => {
+export const fetchPosts = async (selectedSubreddit) => {
     try{
-        const res = await axios.get(`${endpoint}/${selectedSubreddits}.json`)
+        const res = await axios.get(`${endpoint}/${selectedSubreddit}.json`)
         return res.data
     }catch(err){
         console.log(err, 'Problem fetching posts')
@@ -20,6 +21,7 @@ export const fetchSearchResults = async (term) => {
         console.log(err, 'Problem fetching posts')
     } 
 }
+
 export const fetchComments = async (selectedComments) => {
 
     try{
@@ -44,6 +46,25 @@ export const getSubredditsData = () => async(dispatch) => {
         const subreddits = await fetchSubreddits()
         dispatch(setSubreddits(subreddits))
     }catch(err){
-        console.log(err, 'Cannot get the data');
+        console.log(err, 'Cannot get the subreddit data');
     }
+}
+
+export const getPostsData = (selectedSubreddit) => async(dispatch) =>{
+    try{
+        const postsData = await fetchPosts(selectedSubreddit)
+        dispatch(setPosts(postsData))
+    }catch(err){
+        console.log(err, 'Cannot get the posts data')
+    }
+}
+
+export const getSearchData = (searchTerm) => async(dispatch) => {
+    if(searchTerm !== ''){
+        try{
+            const searchData = await fetchSearchResults(searchTerm)
+            dispatch(setPosts(searchData))
+        } catch(err){
+            console.log(err, 'Cannot get the search data')
+    }}
 }
