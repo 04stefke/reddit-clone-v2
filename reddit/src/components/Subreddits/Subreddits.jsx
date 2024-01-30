@@ -2,6 +2,8 @@ import { Box, Button, Stack } from '@mui/material'
 import React from 'react'
 
 const Subreddits = () => {
+    
+
     const subreddit = (
         <Box sx={{padding: '30px', paddingBottom: '10px', flexDirection: {sm: 'column', md: 'row'}}}>
             <Button sx={{bgcolor:'red', color:'white'}} >Subreddits</Button>

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { setSubreddits } from '../Subreddits/SubredditsSlice'
 
 const endpoint = 'https://www.reddit.com'
 const search_endpoint = 'https://www.reddit.com/search.json?q='
@@ -36,4 +37,13 @@ export const fetchSubreddits = async () => {
     }catch(err){
         console.log(err, 'Problem fetching subreddits')
     } 
+}
+
+export const getSubredditsData = () => async(dispatch) => {
+    try{
+        const subreddits = await fetchSubreddits()
+        dispatch(setSubreddits(subreddits))
+    }catch(err){
+        console.log(err, 'Cannot get the data');
+    }
 }
