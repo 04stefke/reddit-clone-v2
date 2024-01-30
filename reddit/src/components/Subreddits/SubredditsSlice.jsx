@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 export const SubredditsSlice = createSlice({
-    name: 'subreddit',
+    name: 'subreddits',
     initialState: {
         subreddits: []
     }, 
