@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Reddits = () => {
 
@@ -18,7 +19,8 @@ const Reddits = () => {
             <Box sx={{marginBottom: '10px'}}><img src="" alt="" width={'100%'}/></Box>
             <Typography variant='p' gutterBottom>Author</Typography>
             <Box sx={{marginBottom: '30px'}}>
-                <Button sx={{bgcolor:'red', color:'white'}}>Comments</Button>
+                <Link to='/Comments'><Button sx={{bgcolor:'red', color:'white'}}>Comments</Button></Link>
+                
             </Box>
         </Box>
     )

@@ -11,11 +11,11 @@ const Header = () => {
     padding:' 25px 30px', 
     bgcolor:'#000000', 
     color:'#ffffff', 
-    borderBottom:'1px solid #3d3d3d'}}>
+    }}>
         <Box>Logo</Box>
         <Stack direction='row' alignItems={'center'}>
-            <Input placeholder='Search...' className="search-bar" style={{color: '#ffffff'}} />
-            <Button><i class='bx bx-search-alt' style={{color: '#ffffff'}}></i></Button>
+            <Input placeholder='Search...' className="search-bar" sx={{color: '#ffffff'}} />
+            <Button sx={{bgcolor:'red'}} ><i class='bx bx-search-alt' style={{color: '#ffffff'}}></i></Button>
         </Stack>
         <Box>Made by. Stefan</Box>
     </Box>
