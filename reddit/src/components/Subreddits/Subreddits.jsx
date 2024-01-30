@@ -4,7 +4,7 @@ import React from 'react'
 const Subreddits = () => {
     const subreddit = (
         <Box sx={{padding: '30px', paddingBottom: '10px', flexDirection: {sm: 'column', md: 'row'}}}>
-            <Button variant="outlined" >Subreddits</Button>
+            <Button sx={{bgcolor:'red', color:'white'}} >Subreddits</Button>
         </Box>
     )
 
