@@ -6,7 +6,7 @@ import { Box } from '@mui/material'
 function App() {
 
   return (
-    <Box sx={{bgcolor: '#fefae0'}}>
+    <Box sx={{bgcolor: '#000000'}}>
       <Header/>
     </Box>
   )
