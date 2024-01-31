@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import { getCommentsData } from '../API/Api'
+import { setButton } from './CommentsSlice'
 const Comments = () => {
     const dispatch = useDispatch()
     const commentsData = useSelector(state => state.comments.comments?.data?.children)
@@ -14,10 +15,19 @@ const Comments = () => {
         dispatch(getCommentsData(selectedComment))
     }, [dispatch, selectedComment])
 
+    const hideComment = () => {
+        if(selectedBtn === 'show comments'){
+            dispatch(setButton('hide comments'))
+        }
+        if(selectedBtn === 'hide comments'){
+            dispatch(setButton('show comments'))
+        }
+    }
 
     const commentItems = commentsData && commentsData.length > 0 ? (
         commentsData.map((item, idx) => (
-            <Box sx={{color: 'white', 
+            <Box key={item.data.id}
+                sx={{color: 'white', 
                 display:'flex', 
                 justifyContent: 'center', 
                 alignItems:'center', 
@@ -38,7 +48,7 @@ const Comments = () => {
   return (
     <Box sx={{width: '100%', marginTop:'20px', marginLeft:'20px'}}>
         <Box>
-            <Link to='/'>
+            <Link to='/' onClick={hideComment}>
                 <Button>Back to posts</Button>
             </Link>
         </Box>

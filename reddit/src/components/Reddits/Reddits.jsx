@@ -3,16 +3,30 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import { getPostsData } from '../API/Api'
+import { setButton, setSelectedComment } from '../Comments/CommentsSlice'
 
 const Reddits = () => {
     const selectedSubreddit = useSelector(state => state.reddits.selectedSubreddit)
     const postData = useSelector(state => state.reddits.posts?.data?.children)
     const searchTerm = useSelector(state => state.reddits.searchTerm)
+    const commentsBtn = useSelector(state => state.comments.showButton)
+    const selectedComment = useSelector(state => state.comments.selectedComment)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getPostsData(selectedSubreddit))
     }, [dispatch, selectedSubreddit])
 
+    const handleSelectComment = (comment) => {
+        if(commentsBtn === 'show comments'){
+            console.log(comment);
+            dispatch(setSelectedComment(comment))
+            dispatch(setButton('hide comments'))
+        } 
+        if(commentsBtn === 'hide comments'){
+            dispatch(setSelectedComment(comment))
+            dispatch(setButton('show comments'))
+        }
+    }
 
     const postItem = postData && postData.length > 0 ? (
         postData.map((item) => (
@@ -31,7 +45,7 @@ const Reddits = () => {
                 <Typography variant='p' gutterBottom>Author: {item.data.author}</Typography>
                 <Box sx={{marginBottom: '30px'}}>
                     <Link to='/Comments'>
-                        <Button sx={{bgcolor:'red', color:'white'}}>Comments</Button>
+                        <Button sx={{bgcolor:'red', color:'white'}} onClick={() => handleSelectComment(item.data.permalink)} >Comments</Button>
                     </Link>
                 </Box>
         </Box>

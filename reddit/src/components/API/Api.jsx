@@ -70,9 +70,9 @@ export const getSearchData = (searchTerm) => async(dispatch) => {
     }}
 }
 
-export const getCommentsData = selectedComment => async (dispatch) => {
+export const getCommentsData = selectedComments => async (dispatch) => {
     try{ 
-        const comments = await fetchComments(selectedComment)
+        const comments = await fetchComments(selectedComments)
         dispatch(setComments(comments))
     } catch(err){
         console.log(err, 'Problem fetching comments')
