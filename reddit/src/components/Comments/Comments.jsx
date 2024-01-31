@@ -38,7 +38,7 @@ const Comments = () => {
                 marginX: '70px',
                 marginBottom:'50px'}}>
                     <Typography gutterBottom>Comment {idx + 1}</Typography>
-                    <Box sx={{marginTop:'20px',marginBottom:'20px'}}>
+                    <Box sx={{marginTop:'20px',marginBottom:'20px', textAlign:'center'}}>
                         <Typography>{item.data.body}</Typography>
                         <Typography sx={{marginTop:'10px'}}>Author: {item.data.author}</Typography>
                     </Box>
