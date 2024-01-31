@@ -10,8 +10,8 @@ const Reddits = () => {
     const postData = useSelector(state => state.reddits.posts?.data?.children)
     const searchTerm = useSelector(state => state.reddits.searchTerm)
     const commentsBtn = useSelector(state => state.comments.showButton)
-    const selectedComment = useSelector(state => state.comments.selectedComment)
     const dispatch = useDispatch()
+
 
     var handleSelectComment = (comment) => {
         if(commentsBtn === 'show comments'){
@@ -26,6 +26,7 @@ const Reddits = () => {
     useEffect(() => {
         dispatch(getPostsData(selectedSubreddit))
     }, [dispatch, selectedSubreddit])
+
 
     const postItem = postData && postData.length > 0 ? (
         postData.map((item) => (

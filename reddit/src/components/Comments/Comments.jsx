@@ -15,6 +15,10 @@ const Comments = () => {
     
     useEffect(() => {
         dispatch(getCommentsData(selectedComment))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
     }, [dispatch, selectedComment])
 
     const hideComment = () => {
