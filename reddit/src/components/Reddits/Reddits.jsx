@@ -36,7 +36,7 @@ const Reddits = () => {
                 </Box>
         </Box>
         ))
-    ) : ( <Box>No Posts</Box>)
+    ) : ( <Box color={'white'}>No Posts</Box>)
 
     
   return (

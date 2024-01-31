@@ -11,7 +11,7 @@ export const RedditSlice = createSlice({
         setPosts(state,action){
             state.posts = action.payload
         },
-        setSearchTerm(state,action){
+        setSearchRedditTerm(state,action){
             state.searchTerm = action.payload
         },
         setSelectedSubreddit(state,action){
@@ -22,7 +22,7 @@ export const RedditSlice = createSlice({
 
 export const {
     setPosts,
-    setSearchTerm,
+    setSearchRedditTerm,
     setSelectedSubreddit
 } = RedditSlice.actions
 

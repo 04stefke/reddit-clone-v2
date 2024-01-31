@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {getPostsData, getSubredditsData} from '../API/Api'
 import {Link} from 'react-router-dom'
-import { setSearchTerm, setSelectedSubreddit } from '../Reddits/RedditsSlice'
+import { setSearchRedditTerm, setSelectedSubreddit } from '../Reddits/RedditsSlice'
 
 
 const Subreddits = () => {
@@ -13,7 +13,7 @@ const Subreddits = () => {
     
     const handleSlice = (id) => {
         dispatch(setSelectedSubreddit(id))
-        dispatch(setSearchTerm(''))
+        dispatch(setSearchRedditTerm(''))
     }
     
     useEffect(() => {
