@@ -37,7 +37,7 @@ const Header = () => {
     justifyContent:'space-between', 
     alignItems: 'center', 
     padding:' 25px 30px', 
-    bgcolor:'#000000', 
+    bgcolor:'#0F0F0F', 
     color:'#ffffff', 
     }}>
         <Box>Logo</Box>
