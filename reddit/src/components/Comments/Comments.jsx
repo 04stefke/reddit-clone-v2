@@ -7,10 +7,12 @@ import { setButton } from './CommentsSlice'
 const Comments = () => {
     const dispatch = useDispatch()
     const commentsData = useSelector(state => state.comments.comments?.data?.children)
-    const selectedComment = useSelector(state => state.comments.selectedComment)
+    const selectedComment = useSelector(state => state.comments.selectedComments)
+
     const selectedBtn = useSelector(state => state.comments.showButton)
     const commentsList = useRef()
 
+    
     useEffect(() => {
         dispatch(getCommentsData(selectedComment))
     }, [dispatch, selectedComment])

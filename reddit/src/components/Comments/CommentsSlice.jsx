@@ -6,7 +6,7 @@ export const CommentsSLice = createSlice({
         comments: [],
         selectedComments: '',
         selectedTitle: '',
-        showButton: 'Show Comments'
+        showButton: 'show comments'
     },
     reducers:{
         setComments(state, action){

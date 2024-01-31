@@ -70,7 +70,7 @@ export const getSearchData = (searchTerm) => async(dispatch) => {
     }}
 }
 
-export const getCommentsData = selectedComments => async (dispatch) => {
+export const getCommentsData = (selectedComments) => async (dispatch) => {
     try{ 
         const comments = await fetchComments(selectedComments)
         dispatch(setComments(comments))

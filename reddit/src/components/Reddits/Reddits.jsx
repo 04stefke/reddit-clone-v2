@@ -12,13 +12,9 @@ const Reddits = () => {
     const commentsBtn = useSelector(state => state.comments.showButton)
     const selectedComment = useSelector(state => state.comments.selectedComment)
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getPostsData(selectedSubreddit))
-    }, [dispatch, selectedSubreddit])
 
-    const handleSelectComment = (comment) => {
+    var handleSelectComment = (comment) => {
         if(commentsBtn === 'show comments'){
-            console.log(comment);
             dispatch(setSelectedComment(comment))
             dispatch(setButton('hide comments'))
         } 
@@ -27,6 +23,9 @@ const Reddits = () => {
             dispatch(setButton('show comments'))
         }
     }
+    useEffect(() => {
+        dispatch(getPostsData(selectedSubreddit))
+    }, [dispatch, selectedSubreddit])
 
     const postItem = postData && postData.length > 0 ? (
         postData.map((item) => (
