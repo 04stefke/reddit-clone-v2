@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { setSubreddits } from '../Subreddits/SubredditsSlice'
 import { setPosts } from '../Reddits/RedditsSlice'
+import { setComments } from '../Comments/CommentsSlice'
 
 const endpoint = 'https://www.reddit.com'
 const search_endpoint = 'https://www.reddit.com/search.json?q='
@@ -67,4 +68,13 @@ export const getSearchData = (searchTerm) => async(dispatch) => {
         } catch(err){
             console.log(err, 'Cannot get the search data')
     }}
+}
+
+export const getCommentsData = selectedComment => async (dispatch) => {
+    try{ 
+        const comments = await fetchComments(selectedComment)
+        dispatch(setComments(comments))
+    } catch(err){
+        console.log(err, 'Problem fetching comments')
+    }
 }
