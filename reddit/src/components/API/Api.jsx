@@ -6,7 +6,7 @@ import { setComments } from '../Comments/CommentsSlice'
 const endpoint = 'https://www.reddit.com'
 const search_endpoint = 'https://www.reddit.com/search.json?q='
 
-export const fetchPosts = async (selectedSubreddit) => {
+const fetchPosts = async (selectedSubreddit) => {
     try{
         const res = await axios.get(`${endpoint}/${selectedSubreddit}.json`)
         return res.data
@@ -14,7 +14,7 @@ export const fetchPosts = async (selectedSubreddit) => {
         console.log(err, 'Problem fetching posts')
     } 
 }
-export const fetchSearchResults = async (term) => {
+const fetchSearchResults = async (term) => {
     try{
         const res = await axios.get(`${search_endpoint}${term}.json`)
         return res.data
@@ -23,7 +23,7 @@ export const fetchSearchResults = async (term) => {
     } 
 }
 
-export const fetchComments = async (selectedComments) => {
+const fetchComments = async (selectedComments) => {
 
     try{
         const res = await axios.get(`${endpoint}/${selectedComments}.json`)
@@ -33,7 +33,7 @@ export const fetchComments = async (selectedComments) => {
     } 
 }
 
-export const fetchSubreddits = async () => {
+const fetchSubreddits = async () => {
     try{
         const res = await axios.get(`${endpoint}/subreddits.json`)
         return res.data
@@ -41,6 +41,12 @@ export const fetchSubreddits = async () => {
         console.log(err, 'Problem fetching subreddits')
     } 
 }
+
+
+
+
+
+
 
 export const getSubredditsData = () => async(dispatch) => {
     try{

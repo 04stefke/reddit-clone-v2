@@ -5,7 +5,6 @@ export const CommentsSLice = createSlice({
     initialState: {
         comments: [],
         selectedComments: '',
-        selectedTitle: '',
         showButton: 'show comments'
     },
     reducers:{
@@ -14,9 +13,6 @@ export const CommentsSLice = createSlice({
         },
         setSelectedComment(state, action){
             state.selectedComments = action.payload
-        },
-        setSelectedTitle(state, action){
-            state.selectedTitle = action.payload
         },
         setButton(action, state){
             state.showButton = action.payload
@@ -27,7 +23,6 @@ export const CommentsSLice = createSlice({
 export const {
     setComments,
     setSelectedComment,
-    setSelectedTitle,
     setButton
 } = CommentsSLice.actions
 

@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import { getCommentsData } from '../API/Api'
 import { setButton } from './CommentsSlice'
+import { useAppDispatch } from '../../Store/Store'
 const Comments = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const commentsData = useSelector(state => state.comments.comments?.data?.children)
     const selectedComment = useSelector(state => state.comments.selectedComments)
 

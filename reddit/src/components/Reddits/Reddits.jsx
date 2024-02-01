@@ -6,11 +6,12 @@ import { getPostsData } from '../API/Api'
 import { setButton, setSelectedComment } from '../Comments/CommentsSlice'
 
 const Reddits = () => {
-    const selectedSubreddit = useSelector(state => state.reddits.selectedSubreddit)
+    const dispatch = useDispatch()
+    
     const postData = useSelector(state => state.reddits.posts?.data?.children)
     const searchTerm = useSelector(state => state.reddits.searchTerm)
     const commentsBtn = useSelector(state => state.comments.showButton)
-    const dispatch = useDispatch()
+    const selectedSubreddit = useSelector(state => state.reddits.selectedSubreddit)
 
 
     var handleSelectComment = (comment) => {
