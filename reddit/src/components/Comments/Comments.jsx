@@ -42,7 +42,7 @@ const Comments = () => {
                 borderBottom: '1px solid #3d3d3d',
                 marginX: '70px',
                 marginBottom:'50px'}}>
-                    <Typography gutterBottom>Comment {idx + 1}</Typography>
+                    <Typography gutterBottom>Comment No {idx + 1}</Typography>
                     <Box sx={{marginTop:'20px',marginBottom:'20px', textAlign:'center'}}>
                         <Typography>{item.data.body}</Typography>
                         <Typography sx={{marginTop:'10px'}}>Author: {item.data.author}</Typography>
@@ -55,7 +55,7 @@ const Comments = () => {
   return (
     <Box sx={{width: '100%', marginTop:'20px', marginLeft:'20px'}}>
         <Box>
-            <Link to='/' onClick={hideComment}>
+            <Link to='/' onClick={() => hideComment()}>
                 <Button>Back to posts</Button>
             </Link>
         </Box>
