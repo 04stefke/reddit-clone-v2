@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import { setButton, setSelectedComment } from '../Comments/CommentsSlice'
@@ -11,6 +11,7 @@ const Reddits = () => {
     const searchTerm = useSelector(state => state.reddits.searchTerm)
     const commentsBtn = useSelector((state) => state.comments.showButton)
     const selectedSubreddit = useSelector(state => state.reddits.selectedSubreddit)
+    const postList = useRef()
 
 
     const handleSelectComment = (comment) => {
@@ -28,8 +29,7 @@ const Reddits = () => {
     }
 
 
-    const postItem = postData && postData.length > 0 ? (
-        postData.map((item) => (
+    const postItem = postData && postData.map((item) => (
         <Box key={item.data.id}
             sx={{bgcolor: 'light-blue',
             display:'flex', 
@@ -76,7 +76,7 @@ const Reddits = () => {
 
         </Box>
         ))
-    ) : ( <Box color={'white'}>No Posts</Box>)
+  
 
     
   return (
@@ -88,8 +88,9 @@ const Reddits = () => {
             <Typography>Subreddit: {selectedSubreddit}</Typography>
         )}
         
-        {postItem}
-
+            <Box ref={postList}>
+                {postItem}
+            </Box>
     </Box>
   )
 }

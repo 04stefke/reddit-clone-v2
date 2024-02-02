@@ -1,12 +1,12 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import Comments from '../Comments'
 import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom';
 import { setButton } from '../CommentsSlice'
-
+import {userEvent} from '@testing-library/user-event'
 const configStore = configureMockStore()
 
 
@@ -85,7 +85,7 @@ test('should render the selected comment', () => {
 //     )
 
 //     const button = screen.getByText('Back to posts')
-//     fireEvent.click(button)
+//     userEvent.click(button)
 
 //     const actions = store.getActions()
 //     const expectedAction = setButton('show comments')

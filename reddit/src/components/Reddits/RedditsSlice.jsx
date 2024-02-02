@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const RedditSlice = createSlice({
-    name: 'posts',
+    name: 'reddits',
     initialState: {
         posts: [],
         searchTerm: '',
