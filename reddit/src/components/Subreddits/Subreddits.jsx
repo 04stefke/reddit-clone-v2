@@ -4,16 +4,19 @@ import {useDispatch, useSelector} from 'react-redux'
 import {getPostsData, getSubredditsData} from '../API/Api'
 import {Link} from 'react-router-dom'
 import { setSearchRedditTerm, setSelectedSubreddit } from '../Reddits/RedditsSlice'
-
+import {setButton} from '../Comments/CommentsSlice'
 
 const Subreddits = () => {
     const dispatch = useDispatch()
     const subredditsData = useSelector((state) => state.subreddits.subreddits.data?.children)
     const selectedSubreddit = useSelector((state) => state.reddits.selectedSubreddit)
-    
+    const commentsButton = useSelector((state) => state.comments.showButton)
     const handleSlice = (id) => {
         dispatch(setSelectedSubreddit(id))
         dispatch(setSearchRedditTerm(''))
+        if (commentsButton === 'Hide Comments') {
+            dispatch(setButtons('Show Comments'));      
+        }
     }
     
     useEffect(() => {

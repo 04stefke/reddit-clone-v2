@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import Comments from '../Comments'
@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router-dom'
 import '@testing-library/jest-dom';
 import { setButton } from '../CommentsSlice'
 
-const configStore = configureMockStore([])
+const configStore = configureMockStore()
 
 
 const initialState = {
@@ -74,17 +74,17 @@ test('should render the selected comment', () => {
     expect(getByText('comment 1')).toBeInTheDocument()
 })
 
-// test('should set the showButton to the show comments when pressed on the button', () => {
+// test('should set the showButton to the show comments when pressed on the button',  () => {
 //     const store = configStore(initialState)
-//     const {getByText} = render(  
+//     render(
 //         <Provider store={store}>
 //             <MemoryRouter>
-//                 <Comments/>   
+//                 <Comments />
 //             </MemoryRouter>
 //         </Provider>
 //     )
 
-//     const button = getByText('Back to posts')
+//     const button = screen.getByText('Back to posts')
 //     fireEvent.click(button)
 
 //     const actions = store.getActions()

@@ -14,7 +14,7 @@ export const CommentsSLice = createSlice({
         setSelectedComment(state, action){
             state.selectedComments = action.payload
         },
-        setButton(action, state){
+        setButton(state, action){
             state.showButton = action.payload
         }
     }

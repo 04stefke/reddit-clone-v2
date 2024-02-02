@@ -9,8 +9,8 @@ const Comments = () => {
     const dispatch = useAppDispatch()
     const commentsData = useSelector(state => state.comments.comments?.data?.children)
     const selectedComment = useSelector(state => state.comments.selectedComments)
-
     const selectedBtn = useSelector(state => state.comments.showButton)
+    console.log(selectedBtn)
     const commentsList = useRef()
 
     
@@ -55,7 +55,7 @@ const Comments = () => {
   return (
     <Box sx={{width: '100%', marginTop:'20px', marginLeft:'20px'}}>
         <Box>
-            <Link to='/' onClick={() => hideComment()}>
+            <Link to='/' onClick={hideComment}>
                 <Button>Back to posts</Button>
             </Link>
         </Box>
