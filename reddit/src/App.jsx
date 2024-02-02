@@ -10,7 +10,7 @@ import Comments from './components/Comments/Comments'
 function App() {
 
   return (
-    <Box sx={{bgcolor: '#0F0F0F'}}>
+    <Box sx={{bgcolor: '#0F0F0F', overflow: 'auto'}}>
       <Header/>
       <Box sx={{display: 'flex'}}>
         <Subreddits/>

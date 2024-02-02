@@ -40,12 +40,12 @@ const Header = () => {
     bgcolor:'#0F0F0F', 
     color:'#ffffff', 
     }}>
-        <Box>Logo</Box>
+        <Box ><img width={'100px'} src="/logo.png" alt="" /></Box>
         <Stack direction='row' alignItems={'center'}>
             <Input 
               placeholder='Search...' 
               className="search-bar" 
-              sx={{color: '#ffffff'}} 
+              sx={{color: '#ffffff', padding: '10px 25px'}} 
               onChange={onSearchChange}
               onKeyDown={enter}/>
             <Button 

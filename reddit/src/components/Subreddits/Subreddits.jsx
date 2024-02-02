@@ -43,7 +43,7 @@ const Subreddits = () => {
         ))
      
     return (
-        <Stack sx={{borderRight: '1px solid #3d3d3d', width: 'fit-content'}}>
+        <Stack sx={{borderRight: '1px solid #3d3d3d', width: 'fit-content', height: 'fit-content'}}>
             {subreddit}
         </Stack>
     )

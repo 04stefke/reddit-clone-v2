@@ -28,6 +28,10 @@ const Reddits = () => {
         }
     }
 
+    const backToTop = () => {
+        postList.current.scroll(0,0)
+    }
+
 
     const postItem = postData && postData.map((item) => (
         <Box key={item.data.id}
@@ -44,7 +48,7 @@ const Reddits = () => {
                     variant='h5' 
                     component='h2' 
                     sx={{marginLeft: '20px',marginBottom: '20px', fontWeight:'bold'}}>
-                        Post Title: {item.data.title}
+                        {item.data.title}
                 </Typography>
 
                 <Typography 
@@ -55,7 +59,7 @@ const Reddits = () => {
 
                 <Box 
                     sx={{marginBottom: '10px'}}>
-                        <img src={item.data.url} alt="" width={'100%'}/>
+                        <img src={item.data.url} alt="" width={'500px'}/>
                 </Box>
 
                 <Typography 
@@ -64,14 +68,16 @@ const Reddits = () => {
                         Author: {item.data.author}
                 </Typography>
 
-                <Box sx={{marginBottom: '30px'}}>
-                    <Link to='/Comments'>
-                        <Button 
-                            sx={{bgcolor:'red', color:'white'}} 
-                            onClick={() => handleSelectComment(item.data.permalink)}>
-                                Check the Comments
-                        </Button>
-                    </Link>
+                <Box 
+                    sx={{marginBottom: '30px', display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+                        <Link to='/Comments'>
+                            <Button 
+                                sx={{bgcolor:'red', color:'white'}} 
+                                onClick={() => handleSelectComment(item.data.permalink)}>
+                                    Check the Comments
+                            </Button>
+                        </Link>
+                        <Button sx={{bgcolor:'red', color:'white', scrollBehavior:'smooth'}} onClick={backToTop}>Back To Top</Button>
                 </Box>
 
         </Box>
@@ -88,7 +94,7 @@ const Reddits = () => {
             <Typography>Subreddit: {selectedSubreddit}</Typography>
         )}
         
-            <Box ref={postList}>
+            <Box ref={postList} height={'1660px'} sx={{overflow: 'auto'}}>
                 {postItem}
             </Box>
     </Box>
