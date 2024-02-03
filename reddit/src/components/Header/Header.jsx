@@ -52,7 +52,7 @@ const Header = () => {
               sx={{bgcolor:'#FF4500'}} 
               onClick={searchReddit}
             >
-              <i className='bx bx-search-alt' style={{color: '#ffffff'}}></i>
+              <box-icon name='search-alt'sx={{color: '#fff'}}></box-icon>
             </Button>
         </Stack>
         <Box>Made by. Stefan</Box>
