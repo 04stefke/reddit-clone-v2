@@ -6,6 +6,7 @@ import Subreddits from './components/Subreddits/Subreddits'
 import Reddits from './components/Reddits/Reddits'
 import { Routes, Route } from 'react-router-dom'
 import Comments from './components/Comments/Comments'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
         </Routes>
 
       </Box>
-
+    <Footer/>
     </Box>
   )
 }
