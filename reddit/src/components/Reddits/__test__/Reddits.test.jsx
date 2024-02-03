@@ -58,7 +58,7 @@ test('should render the post title', () => {
         </Provider>
     )
     
-    expect(getByText('Post Title: post title 1')).toBeInTheDocument()
+    expect(getByText('post title 1')).toBeInTheDocument()
 })
 
 test('should render the selftext of the post', () => {
