@@ -1,5 +1,24 @@
 
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: hsla(0, 0, 70%, 100%);
+}
+.centerGif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 @media screen and (max-width: 1600px) {
     .css-k008qs{
         display: flex;

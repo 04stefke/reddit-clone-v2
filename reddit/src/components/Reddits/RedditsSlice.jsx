@@ -5,7 +5,8 @@ export const RedditSlice = createSlice({
     initialState: {
         posts: [],
         searchTerm: '',
-        selectedSubreddit: 'r/pics'
+        selectedSubreddit: 'r/pics',
+        loading: false
     },
     reducers: {
         setPosts(state,action){
@@ -16,6 +17,9 @@ export const RedditSlice = createSlice({
         },
         setSelectedSubreddit(state,action){
             state.selectedSubreddit = action.payload
+        },
+        isLoading(state, action){
+            state.loading = action.payload
         }
     }
 })
@@ -23,7 +27,8 @@ export const RedditSlice = createSlice({
 export const {
     setPosts,
     setSearchRedditTerm,
-    setSelectedSubreddit
+    setSelectedSubreddit,
+    isLoading
 } = RedditSlice.actions
 
 export default RedditSlice.reducer

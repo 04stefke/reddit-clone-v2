@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { setSubreddits } from '../Subreddits/SubredditsSlice'
-import { setPosts } from '../Reddits/RedditsSlice'
+import { isLoading, setPosts } from '../Reddits/RedditsSlice'
 import { setComments } from '../Comments/CommentsSlice'
 
 const endpoint = 'https://www.reddit.com'
@@ -50,18 +50,24 @@ const fetchSubreddits = async () => {
 
 export const getSubredditsData = () => async(dispatch) => {
     try{
+        dispatch(isLoading(true))
         const subreddits = await fetchSubreddits()
         dispatch(setSubreddits(subreddits))
+        dispatch(isLoading(false))
     }catch(err){
+        dispatch(isLoading(false))
         console.log(err, 'Cannot get the subreddit data');
     }
 }
 
 export const getPostsData = (selectedSubreddit) => async(dispatch) =>{
     try{
+        dispatch(isLoading(true))
         const postsData = await fetchPosts(selectedSubreddit)
         dispatch(setPosts(postsData))
+        dispatch(isLoading(false))
     }catch(err){
+        dispatch(isLoading(false))
         console.log(err, 'Cannot get the posts data')
     }
 }
@@ -69,18 +75,24 @@ export const getPostsData = (selectedSubreddit) => async(dispatch) =>{
 export const getSearchData = (searchTerm) => async(dispatch) => {
     if(searchTerm !== ''){
         try{
+            dispatch(isLoading(true))
             const searchData = await fetchSearchResults(searchTerm)
             dispatch(setPosts(searchData))
+            dispatch(isLoading(false))
         } catch(err){
+            dispatch(isLoading(false))
             console.log(err, 'Cannot get the search data')
     }}
 }
 
 export const getCommentsData = (selectedComments) => async (dispatch) => {
     try{ 
+        dispatch(isLoading(true))
         const comments = await fetchComments(selectedComments)
         dispatch(setComments(comments))
+        dispatch(isLoading(false))
     } catch(err){
+        dispatch(isLoading(false))
         console.log(err, 'Problem fetching comments')
     }
 }
