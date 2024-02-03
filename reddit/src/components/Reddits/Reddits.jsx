@@ -52,7 +52,7 @@ const Reddits = () => {
                 </Typography>
 
                 <Typography 
-                    variant='h5' 
+                    variant='p' 
                     gutterBottom>
                         {item.data.selftext}
                 </Typography>
@@ -72,12 +72,12 @@ const Reddits = () => {
                     sx={{marginBottom: '30px', display: 'flex', justifyContent: 'space-between', width: '100%'}}>
                         <Link to='/Comments'>
                             <Button 
-                                sx={{bgcolor:'red', color:'white'}} 
+                                sx={{bgcolor:'#FF4500', color:'white'}} 
                                 onClick={() => handleSelectComment(item.data.permalink)}>
                                     Check the Comments
                             </Button>
                         </Link>
-                        <Button sx={{bgcolor:'red', color:'white', scrollBehavior:'smooth'}} onClick={backToTop}>Back To Top</Button>
+                        <Button sx={{bgcolor:'#FF4500', color:'white', scrollBehavior:'smooth'}} onClick={backToTop}>Back To Top</Button>
                 </Box>
 
         </Box>
@@ -86,7 +86,7 @@ const Reddits = () => {
 
     
   return (
-    <Box sx={{color: 'white', width:'100%', marginTop:'70px'}}>
+    <Box sx={{color: 'black', width:'auto', margin:'20px 50px', }}>
         {searchTerm !== '' && (
             <Typography>SearchTerm: {searchTerm}</Typography>
         )}
@@ -94,7 +94,7 @@ const Reddits = () => {
             <Typography>Subreddit: {selectedSubreddit}</Typography>
         )}
         
-            <Box ref={postList} height={'1660px'} sx={{overflow: 'auto'}}>
+            <Box ref={postList} height={'1660px'} width={'80vw'} sx={{overflow: 'auto', bgcolor: '#F4FDFF '}}>
                 {postItem}
             </Box>
     </Box>

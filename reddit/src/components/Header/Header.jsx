@@ -36,20 +36,20 @@ const Header = () => {
     sx={{display: 'flex', 
     justifyContent:'space-between', 
     alignItems: 'center', 
-    padding:' 25px 30px', 
-    bgcolor:'#0F0F0F', 
-    color:'#ffffff', 
+    padding:' 15px 30px', 
+    bgcolor:'#F4FDFF ', 
+    color:'black', 
     }}>
         <Box ><img width={'100px'} src="/logo.png" alt="" /></Box>
         <Stack direction='row' alignItems={'center'}>
             <Input 
               placeholder='Search...' 
               className="search-bar" 
-              sx={{color: '#ffffff', padding: '10px 25px'}} 
+              sx={{color: 'black', padding: '10px 25px'}} 
               onChange={onSearchChange}
               onKeyDown={enter}/>
             <Button 
-              sx={{bgcolor:'red'}} 
+              sx={{bgcolor:'#FF4500'}} 
               onClick={searchReddit}
             >
               <i className='bx bx-search-alt' style={{color: '#ffffff'}}></i>

@@ -30,14 +30,15 @@ const Comments = () => {
     const commentItems = commentsData && commentsData.length > 0 ? (
         commentsData.map((item, idx) => (
             <Box key={item.data.id}
-                sx={{color: 'white', 
+                sx={{color: 'black', 
                 display:'flex', 
                 justifyContent: 'center', 
                 alignItems:'center', 
                 flexDirection: 'column',
                 borderBottom: '1px solid #3d3d3d',
                 marginX: '70px',
-                marginBottom:'50px'}}>
+                marginBottom:'50px',
+                bgcolor:''}}>
                     <Typography gutterBottom>Comment No {idx + 1}</Typography>
                     <Box sx={{marginTop:'20px',marginBottom:'20px', textAlign:'center'}}>
                         <Typography>{item.data.body}</Typography>
@@ -49,10 +50,10 @@ const Comments = () => {
 
 
   return (
-    <Box sx={{width: '100%', marginTop:'20px', marginLeft:'20px'}}>
-        <Box>
+    <Box sx={{width: '80vw', marginTop:'20px', marginLeft:'20px', overflow: 'auto', height: '1660px', bgcolor: '#F4FDFF'}}>
+        <Box sx={{padding: '20px'}}>
             <Link to='/' onClick={hideComment}>
-                <Button>Back to posts</Button>
+                <Button sx={{bgcolor:'#FF4500', color: 'white'}}>Back to posts</Button>
             </Link>
         </Box>
 

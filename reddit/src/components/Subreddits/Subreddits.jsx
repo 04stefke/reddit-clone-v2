@@ -31,21 +31,26 @@ const Subreddits = () => {
     const subreddit = subredditsData && subredditsData.map(item => (
             <Box 
                 key={item.data.display_name} 
-                sx={{padding: '30px', 
-                    paddingBottom: '0', 
-                    flexDirection: {sm: 'column', md: 'row'}}}>
+                sx={{padding: '10px 5px 5px 30px'}}>
                     <Link 
                         to='/'
                         onClick={() => handleSlice(item.data.display_name_prefixed)}>
-                        <Button sx={{bgcolor:'red', color:'white'}}>{item.data.display_name}</Button>
+                        <Button sx={{bgcolor:'#FF4500', color:'#fff'}}>{item.data.display_name}</Button>
                     </Link>
             </Box> 
         ))
      
     return (
-        <Stack sx={{borderRight: '1px solid #3d3d3d', width: 'fit-content', height: 'fit-content'}}>
+        <Box sx={{ 
+                    width: '240px', 
+                    height: {sx: 'auto', md: '95%'}, 
+                    bgcolor: '#F4FDFF ', 
+                    paddingBottom: '20px',
+                    marginTop: '45px',
+                    marginLeft: '20px',
+                    flexDirection: 'column'}}>
             {subreddit}
-        </Stack>
+        </Box>
     )
 }
 

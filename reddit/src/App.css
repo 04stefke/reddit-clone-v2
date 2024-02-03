@@ -1,0 +1,45 @@
+
+
+@media screen and (max-width: 1600px) {
+    .css-k008qs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .MuiBox-root .css-1f50k7l{ 
+        display: flex ;
+        flex-direction: row;
+        overflow: auto;
+        width: 1000px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1000px) {
+
+    .MuiBox-root .css-1f50k7l{ 
+        width: 600px;
+    }
+    .css-1v1tu1a{
+        font-size: 12px;
+        max-height: fit-content;
+    }
+    .css-1pmpc6y-MuiInputBase-root-MuiInput-root{
+        width: 100px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .MuiBox-root .css-1f50k7l{
+        width: 400px ;
+    }
+
+    .css-aaj8as{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+}
