@@ -42,4 +42,13 @@
         gap: 20px;
     }
 
+    h2{
+        font-size: 1rem;
+    }
+    .MuiBox-root .css-byquje{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 50px;
+        padding: 5px;
+    }
 }

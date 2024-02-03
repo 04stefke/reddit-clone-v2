@@ -45,8 +45,8 @@ const Reddits = () => {
             marginX: '70px'}}>
 
                 <Typography 
-                    variant='h5' 
-                    component='h2' 
+                    variant='h6' 
+                     
                     sx={{marginLeft: '20px',marginBottom: '20px', fontWeight:'bold'}}>
                         {item.data.title}
                 </Typography>
